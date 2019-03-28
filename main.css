@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(0,0,0, 0.8);
+    color: white;
+}
+
+.blurshow::after{
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(chart.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:block;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    transition: all 2000ms;
+}
+
+.blurshow:hover::after{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.blurshow:hover .content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    transition: all 2000ms;
+}
+
+.content{
+    position: absolute;
+    z-index:1;
+    top: 25%;
+    left: 40%;
+    text-align: center;
+    margin-top: 120px;
+    margin-left: -100px;
+    transition: all 2000ms;
+    color: gold;
+}
+
+.content .title{
+    font-size: 2.8rem;
+    margin-top: 1rem;
+}
+
+.content .text{
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+.container{
+    padding-top: 4rem;
+    margin: auto;
+    overflow: hidden;
+    max-width: 1000px;
+    text-align: justify;
+}
+
+.grid-2 {
+    display:grid;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.history{
+    background: lightgray;
+    color: black;
+}
+.grid-1 {
+    margin: 0 20px;
+    display:grid;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(1, 1fr)
+}
+
+div p{
+    margin-bottom: 40px;
+}
+
+
+.center{
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.restrict{
+    max-width: 80%;
+    margin-top: 30px;
+    display: block;
+    margin: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+}
+
+@media(max-width:850px){
+    .blurshow::after{
+        height:60vh;
+    }
+
+    .content{
+        left:25%;
+        margin-top:0;
+        margin-left:-70px;
+    }
+    
+    .content .title{
+        margin-top: 0px;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
+}
